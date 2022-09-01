@@ -1,18 +1,18 @@
 // button when pressed needs to bring up questions in the html that ask about code and then have four clickable options
 // start quiz code here
-let questionDiv = document.getElementById("Question")
-let answers1 = document.getElementById("answers1")
-let answers2 = document.getElementById("answers2")
-let answers3 = document.getElementById("answers3")
-let answers4 = document.getElementById("answers4")
+var questionDiv = document.getElementById("Question")
+var answers1 = document.getElementById("answers1")
+var answers2 = document.getElementById("answers2")
+var answers3 = document.getElementById("answers3")
+var answers4 = document.getElementById("answers4")
 
-let button = document.getElementById("button1")
+var button = document.getElementById("button1")
 // my start quiz button getting a variable here
-let timeholder = document.getElementById("timer")
+var timeholder = document.getElementById("timer")
 // timer getting variable
-let timeleft = 60
+var timeleft = 60
 // timer starts at 60
-let Questions = [
+var Questions = [
     // questions array with answers
     {question: "What is a Function?",
     answers: [
@@ -47,7 +47,7 @@ correctAnswer: "right answer",
 
 // function for timer
 function startTimer() {
-    let Timer = setInterval(function() {
+    var Timer = setInterval(function() {
     if(timeleft <= 0) {
         clearInterval(Timer);
     }
@@ -64,6 +64,41 @@ function createQuestions() {
     answers3.textContent = Questions[currentIndex].answers[2];
     answers4.textContent = Questions[currentIndex].answers[3];
 }
+function rightAnswer(selectedAnswer) {
+    var currentcorrectAnswer = Questions[currentIndex].correctAnswer;
+    if(selectedAnswer === currentcorrectAnswer) {
+        // add time
+        alert("You are correct!")
+        // score = +10
+    }
+    else {
+        // subtract time
+        alert("Incorrect!")
+        // score = -10
+    }
+    if(currentIndex === Questions.length -1) {
+        // alert("Your score is concat."score""")
+        // call quiz end function
+
+    }
+    else {
+        currentIndex ++ ;
+        createQuestions
+    }
+}
+
+answers1.addEventListener("click", function() {
+    rightAnswer(answers1.textContent);
+});
+answers2.addEventListener("click", function() {
+    rightAnswer(answers1.textContent);
+});
+answers3.addEventListener("click", function() {
+    rightAnswer(answers1.textContent);
+});
+answers4.addEventListener("click", function() {
+    rightAnswer(answers1.textContent);
+});
 
 button.addEventListener("click", function() {
 // start quiz button is clickable and on click executes function
