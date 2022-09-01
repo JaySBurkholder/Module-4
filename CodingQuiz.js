@@ -55,9 +55,14 @@ function startTimer() {
     timeleft-- 
     },1000)
 }   
-
-function createQuestions(question) {
-    
+var currentIndex = 0
+function createQuestions() {
+    var currentQuestion = Questions[currentIndex];
+    questionDiv.textContent = currentQuestion.question;
+    answers1.textContent = Questions[currentIndex].answers[0];
+    answers2.textContent = Questions[currentIndex].answers[1];
+    answers3.textContent = Questions[currentIndex].answers[2];
+    answers4.textContent = Questions[currentIndex].answers[3];
 }
 
 button.addEventListener("click", function() {
@@ -74,6 +79,8 @@ button.addEventListener("click", function() {
     button.classList.add("hide")
     // add element with class of hide after button is clicked
     startTimer()
+    // calling create ques
+    createQuestions()
     // start timer next
 })
 
