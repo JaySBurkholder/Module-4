@@ -76,8 +76,11 @@ function rightAnswer(selectedAnswer) {
         alert("Incorrect!")
         // score = -10
     }
+    // if(selectedAnswer === correctAnswer) {
+        // go to next question
+    // }
     if(currentIndex === Questions.length -1) {
-        // alert("Your score is concat."score""")
+        // alert("Your score is concat."score"")
         // call quiz end function
 
     }
