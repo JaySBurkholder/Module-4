@@ -91,13 +91,13 @@ answers1.addEventListener("click", function() {
     rightAnswer(answers1.textContent);
 });
 answers2.addEventListener("click", function() {
-    rightAnswer(answers1.textContent);
+    rightAnswer(answers2.textContent);
 });
 answers3.addEventListener("click", function() {
-    rightAnswer(answers1.textContent);
+    rightAnswer(answers3.textContent);
 });
 answers4.addEventListener("click", function() {
-    rightAnswer(answers1.textContent);
+    rightAnswer(answers4.textContent);
 });
 
 button.addEventListener("click", function() {
